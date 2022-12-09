@@ -14,5 +14,5 @@ app.use(alugueisRoute)
 app.use(clienteRoute)
 app.use(jogosRoute)
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4000;
 app.listen(port, () => console.log(`Server is running in port ${port}`))
