@@ -1,4 +1,4 @@
-import connection from "../../Db/database";
+import connection from "../../Db/database.js";
 
 export default async function listarClientePorId(req, res) {
   const  idCliente  = req.params.id;
@@ -6,7 +6,7 @@ export default async function listarClientePorId(req, res) {
     const clienteRequeridos = await connection.query(
       `SELECT * 
       FROM customers 
-      WHERE cpf = $1`
+      WHERE id = $1`
       ,[idCliente]);
 
       if(clienteRequeridos.rows.length == 0){

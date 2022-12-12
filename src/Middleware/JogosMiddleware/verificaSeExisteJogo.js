@@ -1,4 +1,4 @@
-import connection from "../../Db/database";
+import connection from "../../Db/database.js";
 
 export default async function verificaSeExistenteJogo(req, res, next) {
   const jogo = await connection.query(

@@ -1,4 +1,4 @@
-import { clienteSchema } from "../../Schema/clienteSchema";
+import { categoriaSchema } from "../../Schemas/categoriasSchema.js";
 
 export default function validaClienteSchema(req, res, next){
     const novoCliente = req.body;

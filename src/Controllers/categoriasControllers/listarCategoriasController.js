@@ -1,4 +1,4 @@
-import connection from "../../Db/database";
+import connection from "../../Db/database.js";
 
 export default async function listarCategorias(req, res){
     try{

@@ -1,4 +1,8 @@
-import { categoriaSchema } from "../../Schema/categoriasSchema";
+import joi from "joi"
+
+ const categoriaSchema = joi.object({
+    name: joi.string().required()
+})
 
 export default function validaCatSchema(req, res, next){
     const novaCategoria = req.body;

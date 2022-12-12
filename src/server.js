@@ -1,9 +1,9 @@
 import express from "express"
 import cors from "cors"
-import catRouter from "./Routes/categoriasRoutes"
-import alugueisRoute from "./Routes/alugueisRoutes"
-import clienteRoute from "./Routes/clientesRoutes"
-import jogosRoute from "./Routes/jogosRoutes"
+import catRouter from "./Routes/categoriasRoutes.js"
+import alugueisRoute from "./Routes/alugueisRoutes.js"
+import clienteRoute from "./Routes/clientesRoutes.js"
+import jogosRoute from "./Routes/jogosRoutes.js"
 
 const app = express()
 

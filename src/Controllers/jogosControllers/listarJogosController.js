@@ -1,18 +1,29 @@
-import connection from "../../Db/database";
+import connection from "../../Db/database.js";
 
 export default async function listarJogos(req, res) {
-  const { name } = req.query;
+  const  nomeJogo  = req.query.name;
+  let jogosRequeridos = ""
   try {
-    const jogosRequeridos = await connection.query(
-      `SELECT * 
+    if(nomeJogo === undefined){
+    jogosRequeridos = await connection.query(
+      `SELECT games.*, categories.name AS "categoryName"
       FROM games 
       JOIN categories 
-      ON games."categoryId" = categories.id 
-      WHERE categories.name 
-      LIKE '$1%' `
-      ,[name]);
-      res.send(jogosRequeridos)
-  } catch (error) {
+      ON games."categoryId" = categories.id ; `
+      )}
+    else{
+      jogosRequeridos = await connection.query(
+        `SELECT games.*, categories.name AS "categoryName"
+        FROM games 
+        JOIN categories 
+        ON games."categoryId" = categories.id
+        WHERE games.name
+        LIKE '$1%'
+        ; `
+        ), [nomeJogo]}
+        res.send(jogosRequeridos.rows)
+      }
+   catch (error) {
     console.log(error)
     res.sendStatus(500)
   }
